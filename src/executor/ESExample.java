@@ -1,4 +1,4 @@
-package chap28_concurrent;
+package executor;
 
 import java.util.List;
 import java.util.concurrent.Callable;
@@ -24,7 +24,6 @@ public class ESExample {
 			try {
 				Thread.sleep(5000);
 			} catch (InterruptedException e) {
-//				e.printStackTrace();
 				System.out.println("Interrupted ny another thread");
 			}
 			System.out.println("Task completed");

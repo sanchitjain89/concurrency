@@ -1,10 +1,12 @@
+package executor;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class Executor_HelloWorld {
+public class Executor_1 {
 
     public static void main(String[] args) {
         Executor executor = Executors.newFixedThreadPool(5);

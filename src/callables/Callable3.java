@@ -1,9 +1,10 @@
-import java.util.ArrayList;
+package callables;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.*;
 
-public class CallableImpl {
+public class Callable3 {
 
     static class SumTask implements Callable<Integer>{
 

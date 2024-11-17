@@ -1,10 +1,10 @@
-package chap28_concurrent;
+package executor;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class ExecutorDemo {
+public class Executor2 {
 
 	public static void main(String[] args) {
 		
@@ -32,25 +32,26 @@ public class ExecutorDemo {
 		es.shutdown();
 		System.out.println("Done");
 	}
-}
 
+	static class MyExecutorThread implements Runnable{
 
-class MyExecutorThread implements Runnable{
-	
-	String name; 
-	CountDownLatch latch;
-	
-	public MyExecutorThread(CountDownLatch c, String n) {
-		latch = c;
-		name = n;
-	}
+		String name;
+		CountDownLatch latch;
 
-	@Override
-	public void run() {
-		for (int i = 0; i < 5; i++) {
-			System.out.println(name + ": " + i);
-			latch.countDown();
+		public MyExecutorThread(CountDownLatch c, String n) {
+			latch = c;
+			name = n;
 		}
-		
+
+		@Override
+		public void run() {
+			for (int i = 0; i < 5; i++) {
+				System.out.println(name + ": " + i);
+				latch.countDown();
+			}
+
+		}
 	}
 }
+
+
