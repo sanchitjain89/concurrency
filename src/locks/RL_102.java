@@ -1,8 +1,8 @@
-package locks101;
+package locks;
 
 import java.util.concurrent.locks.ReentrantLock;
 
-class LockDemo {
+class RL_102 {
     public static void main(String[] args) {
         ReentrantLock lock = new ReentrantLock();
 

@@ -8,7 +8,7 @@ public class SharedQueue {
     private final Queue<Integer> queue = new LinkedList<>();
     private final int CAPACITY = 5;
 
-    public void produce (int item) throws InterruptedException {
+    public synchronized void produce (int item) throws InterruptedException {
         System.out.println(" Inside producer synchronized method ");
         while (queue.size() == CAPACITY){
             System.out.println("Queue is full, producer is waiting");
@@ -20,7 +20,7 @@ public class SharedQueue {
         notify();
     }
 
-    public void consume() throws InterruptedException {
+    public synchronized void consume() throws InterruptedException {
         System.out.println(" Inside consumer synchronized method ");
         while (queue.isEmpty()){
             System.out.println("Queue is empty. Consumer is waiting");

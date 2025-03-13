@@ -11,7 +11,7 @@ public class WaitNotifyExample {
                for (int i = 1; i <= 5; i++){
                    System.out.println("In producer thread. i = " + i);
                    sharedQueue.produce(i);
-//                   Thread.sleep(500);
+                   Thread.sleep(1000);
                }
            } catch (InterruptedException e) {
                System.out.println("OOOps exception");
@@ -24,7 +24,7 @@ public class WaitNotifyExample {
                 for (int i = 0; i < 5; i++) {
                     System.out.println("In consumer thread. i = " + i);
                     sharedQueue.consume();
-//                    Thread.sleep(1000);
+                    Thread.sleep(1000);
                 }
             } catch (InterruptedException e){
                 System.out.println("ooops exception");
