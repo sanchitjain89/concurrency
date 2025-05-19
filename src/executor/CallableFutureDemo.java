@@ -4,9 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.*;
 
-public class ExecutorService_Yoyo {
-
-    Runnable task = () -> System.out.println("This is my task");
+public class CallableFutureDemo {
 
     Runnable taskWithWait = () -> {
         sleepThread(1500);
@@ -29,21 +27,10 @@ public class ExecutorService_Yoyo {
     public static void main(String[] args) {
         ExecutorService executorService = Executors.newFixedThreadPool(3);
 
-        ExecutorService_Yoyo obj = new ExecutorService_Yoyo();
-//        obj.example2(executorService);
+        CallableFutureDemo obj = new CallableFutureDemo();
+//        obj.example2_Submit(executorService);
 //        obj.example3_invokeAll(executorService);
         obj.example4_invokeAny(executorService);
-
-        executorService.shutdown();
-    }
-
-    public void example1_Submit(){
-        ExecutorService executorService = Executors.newFixedThreadPool(3);
-
-        Future<?> future = executorService.submit(taskWithWait);
-
-        System.out.println("Thread name in main " +  Thread.currentThread().getName());
-        System.out.println(future.isDone());
 
         executorService.shutdown();
     }

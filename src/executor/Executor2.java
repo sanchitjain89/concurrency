@@ -49,7 +49,6 @@ public class Executor2 {
 				System.out.println(name + ": " + i);
 				latch.countDown();
 			}
-
 		}
 	}
 }
